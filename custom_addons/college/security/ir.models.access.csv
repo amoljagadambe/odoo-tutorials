@@ -1,4 +1,0 @@
-Text,Standard,Standard,Standard,Standard,Standard,Standard,Standard
-id,name  ,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_stud_stud,stud.stud,college.model_stud_stud,,1,1,1,1
-access_cl_cl,cl_cl,college.model_cl_cl,,1,1,1,1
