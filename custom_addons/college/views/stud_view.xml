@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+		<record id="view_student_form_view_id" model="ir.ui.view">
+            <field name="name">Student Tree View</field>
+            <field name="model">stud.stud</field>
+            <field name="arch" type="xml">
+            <tree string="Student Details" decoration-success="active_student" ><!--  create/edit='false'not allowing user to create/edit records,editable="bottom/top" for creating data in tree view itself-->
+            	<field name="name"/>
+            	<field name="roll_no"/>
+            	<field name="class_name"/>
+            	<field name="div_name"/>
+            	<field name="active_student" invisible="1"/>
+            	<field name="gender"/>
+            </tree>
+            </field>
+        </record>
+        
+        <record id="view_student_tree_view_id" model="ir.ui.view">
+            <field name="name">Students Form View</field>
+            <field name="model">stud.stud</field>
+            <field name="arch" type="xml">
+	            <form>
+		            <sheet>
+	            		<field name="image" widget="image" class="oe_avatar" nolabel="1"/>
+	            		<div class="oe_title">
+	            			<h1><field name="name"/></h1>
+	            		</div>
+		            	<group>
+			            	<group>
+			            		<field name="name"/>
+				            	<field name="roll_no" />
+				            	<field name="class_id"/>
+				            	<field name="birth_date" required="1"/>
+				            	<field name="age"/>
+			            	</group>
+			            	<group>
+				            	<field name="div_name"/>
+				            	<field name="active_student"/>
+				            	<field name="parent_id" required="1"/>
+				            	<field name="gender"/>
+			            	</group>
+		            	</group>
+		            	<notebook>
+		            		<page string="Student Description">
+		            			<group>
+		            				<field name="description" nolabel="1"/>
+		            			</group>
+		            		</page>
+		            		<page string="Guardian Info">
+		            			<group>
+		            				<group>
+		            					<field name="stay_at"/>
+		            				</group>
+		            				<group string="Parent Info" attrs="{'invisible':[('stay_at','!=','parent')],'required':[('stay_at','=','parent')]}">
+			            				<field name="parent_name" />
+			             				<field name="parent_ph_no" />
+			            				<field name="parent_address" />
+		            				</group>
+		            				<group string="Guardian Info" attrs="{'invisible':[('stay_at','!=','guardian')],'required':[('stay_at','=','guardian')]}">
+			            				<field name="guardian_name" />
+			            				<field name="guardian_ph_no" />
+			            				<field name="guardian_address" />
+		            				</group>
+		            				<group string="Hostel Info" attrs="{'invisible':[('stay_at','!=','hostel')],'required':[('stay_at','=','hostel')]}">
+			            				<field name="hostel_name" />
+			            				<field name="hostel_ph_no" />
+			            				<field name="hostel_address" />
+		            				</group>
+		            			</group>
+		            		</page>
+		            	</notebook>
+		            </sheet>
+	            </form>
+            </field>
+        </record>
+        
+        <record id="view_student_kanban_view_id" model="ir.ui.view">
+            <field name="name">Student Kanban View</field>
+            <field name="model">stud.stud</field>
+            <field name="arch" type="xml">
+                <kanban class="o_kanban_mobile">
+                    <field name="name"/>
+                    <field name="class_name"/>
+                    <field name="roll_no"/>
+                    <field name="div_name"/>
+                    <templates>
+                        <t t-name="kanban-box">
+                        	<div t-attf-class="oe_kanban_global_click">
+	                            <div class="row">
+		                            <div class="col-6">
+		                                <strong><field name="name"/></strong>
+		                            </div>
+		                            <div class="col-6 text-right">
+		                                <span class="badge badge-pill"><field name="class_name"/></span>
+		                            </div>
+		                        </div>
+		                        <div>
+		                            <strong>Roll No: </strong><field name="roll_no"/>
+		                            <strong>Division: </strong><field name="div_name"/>
+		                        </div>
+	                        </div>
+                        </t>
+                    </templates>
+                </kanban>
+            </field>
+        </record>
+        
+        <record id="view_student_search_filter" model="ir.ui.view">
+            <field name="name">Student Search Filter</field>
+            <field name="model">stud.stud</field>
+            <field name="arch" type="xml">
+                <search string="Search Student">
+                    <filter string="Accomodation at parent" name="stay_at" domain="[('stay_at','=','parent')]" />
+                    <filter string="Accomodation at Guardian"  name="stay_at" domain="[('stay_at','=','guardian')]" />
+                    <filter string="Accomodation at hostel"  name="stay_at" domain="[('stay_at','=','hostel')]" />
+                    <separator/>
+                    <filter string="Active Student" name="active_student"  domain="[('active_student','=','true')]" />
+                    <separator/>
+                    <group expand="0" string="Group By">
+                        <filter name="group_by_acive_student" string="Active Stdent" context="{'group_by':'active_student'}"/>
+                    </group>
+               </search>
+            </field>
+        </record>
+        
+        <record id="action_student_view_id" model="ir.actions.act_window">
+            <field name="name">Student Details </field>
+            <field name="res_model">stud.stud</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">kanban,tree,form,activity</field>
+            <field name="search_id">view_student_search_filter</field>
+            <field name="search_view_id" ref="view_student_search_filter"></field>
+            <field name="context">{'search_default_active_student':True}</field>
+        </record>
+        
+        <menuitem id="menu_school_root_id" name="College Management" sequence="1"/>
+        
+        <menuitem id="menu_student_view_id" name="Student" parent="menu_school_root_id" action="action_student_view_id" sequence="2"/>
+        
+    </data>
+</odoo>

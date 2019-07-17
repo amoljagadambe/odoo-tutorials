@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="stud_id_2" model="stud.stud">
+            <field name="name">Gaurav</field>
+            <field name="roll_no">20</field>
+            <field name="class_name">Class 11</field>
+            <field name="active">True</field>
+            <field name="gender">male</field>
+        </record>
+        
+        <record id="stud_id_3" model="stud.stud">
+            <field name="name">Amol</field>
+            <field name="roll_no">10</field>
+            <field name="class_name">class 12</field>
+            <field name="active">False</field>
+            <field name="gender">male</field>
+        </record>
+        
+        <record id="stud_id_1" model="stud.stud">
+            <field name="name">Sandeep</field>
+            <field name="roll_no">30</field>
+            <field name="class_name">class 11</field>
+            <field name="active">True</field>
+            <field name="gender">male</field>
+        </record>
+
+    </data>
+</odoo>
