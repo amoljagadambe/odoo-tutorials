@@ -53,6 +53,9 @@
 	            				</form>
 	            			</field>
 	            		</page>
+	            		<page string="Class">
+	            			<field name="class_line"/>
+	            		</page>
 	            	</notebook>
             	</sheet>
             </form>

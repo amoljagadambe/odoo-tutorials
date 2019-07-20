@@ -14,6 +14,7 @@ class ClassInfo(models.Model):
     student_ids = fields.One2many('student.student','class_id','Students')
     class_strength = fields.Integer(compute="_count_strength",string='Class Strength')
     max_class_strength = fields.Integer('Maximum Class Strength',default=60)
+    class_line = fields.Many2many('student.student','student_class_rel','student_id','class_id','Class')
     
     @api.depends('student_ids')
     def _count_strength(self):

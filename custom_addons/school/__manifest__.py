@@ -7,13 +7,14 @@
     'description': """
         Module for School management.
             """,
-    'depends': ['base'],
+    'depends': ['base','website'],
     'data': [
         'views/student_view.xml',
         'security/ir.model.access.csv',
         'views/class_view.xml',
         'data/student_data.xml',
-        'views/res_partner_view.xml'
+        'views/res_partner_view.xml',
+        'views/template.xml'
     ],
     'installable':True,
 }

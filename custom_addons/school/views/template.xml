@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+	<odoo>
+    	<template id="registration_id" name="Registration Form">
+    		<t t-call="website.layout">
+	    		<div id="wrap" class="oe_structure oe_empty">
+				    <section class="pt32 pb32">
+				        <div class="container">
+				            <div class="row s_nb_column_fixed">
+				                <div class="col-lg-12 s_title pt16 pb16 bg-500" style="text-align: center;">
+				                    <h1 class="s_title_default">
+				                        <font style="font-size: 62px;">
+				                        <b>Welcome To Whiz IT</b>
+				                        </font>
+				                    </h1>
+				                </div>
+				            </div>
+				        </div>
+				    </section>
+				    <section class="s_company_team">
+					    <div class="container">
+					        <h1 style="text-align: center;" class="o_default_snippet_text">Please fill The Registration Form</h1>
+					        <form action="/complete/registration" method="post" >
+					        	<input type="hidden" name="csrf_token" t-att-value="request.csrf_token()" />
+						        <div class="row s_nb_column_fixed">
+						            <div class="col-lg-6 pt16 pb16">
+						                <div class="row s_col_no_resize s_col_no_bgcolor">
+						                    <div class="col-lg-3 ">
+						                        <span>Name</span>
+						                    </div>
+						                    <div class="col-lg-9">
+						                        <input type="text" name="name" id="name" class="form-control input-sm" placeholder="Full Name"/>
+						                    </div>
+						                </div>
+						            </div>
+						            <div class="col-lg-6 pt16 pb16">
+						                <div class="row s_col_no_resize s_col_no_bgcolor">
+						                    <div class="col-lg-3">
+						                        <span>Class</span>
+						                    </div>
+						                    <div class="col-lg-9">
+						                        <select name="class" id="class" class="form-control input-sm">
+							                        <t t-foreach="classes" t-as="cl">
+									                    <option t-att-value="cl.id">
+									                    	<t t-esc="cl.name"/>
+									                    </option>
+									                </t>
+						                        </select>
+						                    </div>
+						                </div>
+						            </div>
+						            <div class="col-lg-6 pt16 pb16">
+						                <div class="row s_col_no_resize s_col_no_bgcolor">
+						                    <div class="col-lg-3">
+						                        <span>Birth Date</span>
+						                    </div>
+						                    <div class="col-lg-9">
+						                        <input type="date" name="birth_date" id="birth_date" class="form-control input-sm"/>
+						                    </div>
+						                </div>
+						            </div>
+						            <div class="col-lg-6 pt16 pb16">
+						                <div class="row s_col_no_resize s_col_no_bgcolor">
+						                    <div class="col-lg-3">
+						                        <span>Gender</span>
+						                    </div>
+						                    <div class="col-lg-9">
+						                        <select name="gender" id="gender" class="form-control input-sm" >
+													<option value="female">Female</option>
+													<option value="male">Male</option>
+												</select>
+						                    </div>
+						                </div>
+						            </div>
+						            <div class="col-lg-6 pt16 pb16">
+						            </div>
+						            <div class="s_btn text-center pt16 pb16" data-name="Buttons">
+				                        <input type="submit" value="Register" name="submit" class="btn btn-primary o_default_snippet_text"/>
+			                        </div>
+						        </div>
+					        </form>
+					    </div>
+					</section>
+				</div>
+    		</t>
+    	</template>
+    	
+    	<template id="registration_complete_id" name="Registration Form">
+    		<t t-call="website.layout">
+	    		<div id="wrap" class="oe_structure oe_empty">
+				    <section class="pt32 pb32">
+				        <div class="container">
+				            <div class="row s_nb_column_fixed">
+				                <div class="col-lg-12 s_title pt16 pb16 bg-500" style="text-align: center;">
+				                    <h1 class="s_title_default">
+				                        <font style="font-size: 62px;">
+				                        <b>Thank you for Registering with us</b>
+				                        </font>
+				                    </h1>
+				                </div>
+				            </div>
+				        </div>
+				    </section>
+				</div>
+    		</t>
+    	</template>
+	</odoo>
