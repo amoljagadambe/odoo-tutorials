@@ -54,7 +54,8 @@ class StudentInfo(models.Model):
             return res
     
     @api.model
-    def create(self,create_values): #only 2 params, self will be empty recordset and fields is dict with all field values
+    def create(self,create_values): 
+        """only 2 params, self will be empty recordset and fields is dict with all field values"""
         class_obj = self.env['class.class']
         if not create_values.get('gender'):
             raise UserError(_('Gender Value Cannot be duplicated'))
