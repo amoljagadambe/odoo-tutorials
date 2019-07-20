@@ -134,9 +134,9 @@
             <field name="context">{'search_default_active_student':True}</field>
         </record>
         
-        <menuitem id="menu_school_root_id" name="College Management" sequence="1"/>
+        <menuitem id="menu_college_root_id" name="College Management" sequence="1"/>
         
-        <menuitem id="menu_student_view_id" name="Student" parent="menu_school_root_id" action="action_student_view_id" sequence="2"/>
+        <menuitem id="menu_student_view_id" name="Student" parent="menu_college_root_id" action="action_student_view_id" sequence="2"/>
         
     </data>
 </odoo>

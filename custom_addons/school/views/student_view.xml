@@ -24,13 +24,13 @@
 		            <sheet>
 	            		<field name="image" widget="image" class="oe_avatar" nolabel="1"/>
 	            		<div class="oe_title">
-	            			<h1><field name="name"/></h1>
+	            			<h1><field name="student_display_name" readonly="1"/></h1>
 	            		</div>
 		            	<group>
 			            	<group>
 			            		<field name="name"/>
 				            	<field name="roll_no" />
-				            	<field name="class_id"/>
+				            	<field name="class_id" required="1"/>
 				            	<field name="birth_date" required="1"/>
 				            	<field name="age"/>
 			            	</group>
@@ -39,6 +39,7 @@
 				            	<field name="active_student"/>
 				            	<field name="parent_id" required="1"/>
 				            	<field name="gender"/>
+				            	<field name="class_strength" />
 			            	</group>
 		            	</group>
 		            	<notebook>
@@ -69,6 +70,9 @@
 		            				</group>
 		            			</group>
 		            		</page>
+		            		<page string="Class">
+		            			<field name="class_line"/>
+		            		</page>
 		            	</notebook>
 		            </sheet>
 	            </form>
@@ -92,7 +96,7 @@
 		                                <strong><field name="name"/></strong>
 		                            </div>
 		                            <div class="col-6 text-right">
-		                                <span class="badge badge-pill"><field name="class_name"/></span>
+		                                <span class="badge badge-pill"><field name="class_id"/></span>
 		                            </div>
 		                        </div>
 		                        <div>

@@ -1,21 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <data>
+    <data noupdate="1">
+    
+    	<record id="class_id_1" model="class.class">
+            <field name="name">Class 11th Std</field>
+            <field name="teacher_name">Brigenza</field>
+            <field name="division_name">A</field>
+            <field name="max_class_strength">60</field>
+        </record>
+        
+        <record id="class_id_2" model="class.class">
+            <field name="name">Class 12th Std</field>
+            <field name="teacher_name">Brigenza</field>
+            <field name="division_name">A</field>
+            <field name="max_class_strength">60</field>
+        </record>
 
         <record id="student_id_2" model="student.student">
             <field name="name">Naresh</field>
-            <field name="roll_no">24</field>
+            <field name="roll_no">2</field>
             <field name="class_name">Class 11</field>
             <field name="active">True</field>
             <field name="gender">male</field>
+            <field name="class_id" ref="class_id_1"/>
         </record>
         
         <record id="student_id_3" model="student.student">
             <field name="name">Amol</field>
-            <field name="roll_no">98</field>
+            <field name="roll_no">1</field>
             <field name="class_name">class 12</field>
             <field name="active">False</field>
             <field name="gender">male</field>
+            <field name="class_id" ref="class_id_1"/>
         </record>
         
         <record id="student_id_1" model="student.student">
@@ -24,7 +40,8 @@
             <field name="class_name">class 11</field>
             <field name="active">True</field>
             <field name="gender">male</field>
+            <field name="class_id" ref="class_id_1"/>
         </record>
-
+        
     </data>
 </odoo>

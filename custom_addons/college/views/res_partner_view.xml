@@ -45,7 +45,7 @@
 		    <field name="view_mode">tree,form</field>
 		</record>
         
-        <menuitem id="menu_parent_view_id" name="Parent" parent="school.menu_school_root_id" action="action_parent_view_id" sequence="1"/>
+        <menuitem id="menu_parent_view_id" name="Parent" parent="college.menu_college_root_id" action="action_parent_view_id" sequence="1"/>
         
 	</data>
 </odoo>

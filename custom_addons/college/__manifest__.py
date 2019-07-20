@@ -10,9 +10,9 @@
     'data': [
         'data/stud_data.xml',
         'views/stud_view.xml',
-        'security/ir.model.access.csv',
         'views/cl_view.xml',
-        'views/res_partner_view.xml'
+        'views/res_partner_view.xml',
+        'security/ir.model.access.csv',
     ],
     'installable':True,
 }

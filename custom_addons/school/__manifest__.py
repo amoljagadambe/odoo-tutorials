@@ -9,10 +9,10 @@
             """,
     'depends': ['base'],
     'data': [
-        'data/student_data.xml',
         'views/student_view.xml',
         'security/ir.model.access.csv',
         'views/class_view.xml',
+        'data/student_data.xml',
         'views/res_partner_view.xml'
     ],
     'installable':True,

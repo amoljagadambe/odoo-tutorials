@@ -13,6 +13,7 @@ class ClassInfo(models.Model):
     class_display_name = fields.Char(compute="_class_display_name",store=True)
     student_ids = fields.One2many('student.student','class_id','Students')
     class_strength = fields.Integer(compute="_count_strength",string='Class Strength')
+    max_class_strength = fields.Integer('Maximum Class Strength',default=60)
     
     @api.depends('student_ids')
     def _count_strength(self):
