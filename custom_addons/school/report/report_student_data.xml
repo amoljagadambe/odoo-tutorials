@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+		<template id="report_studentdata">
+			<t t-call="web.external_layout">
+				<div class="page">
+					<t t-foreach="docs" t-as="o">
+						<h2>
+							Student Data
+						</h2>
+						<div class="row">
+							<div class="col-lg-6">
+								<div class="col-lg-3">
+									<b>Name :</b>
+								</div>
+								<div class="col-lg-9">
+									<span t-field="o.name"/>
+								</div>
+							</div>
+							<div class="col-lg-6"></div>
+						</div>
+						<div class="row">
+							<div class="col-lg-6">
+								<div class="col-lg-3">
+									<b>Roll No :</b>
+								</div>
+								<div class="col-lg-9">
+									<span t-field="o.roll_no"/>
+								</div>
+							</div>
+							<div class="col-lg-6"></div>
+						</div>
+						<div class="row">
+							<div class="col-lg-6">
+								<div class="col-lg-3">
+									<b>Class :</b>
+								</div>
+								<div class="col-lg-9">
+									<span t-field="o.class_id"/>
+								</div>
+							</div>
+							<div class="col-lg-6"></div>
+						</div>
+						<div class="row">
+							<div class="col-lg-6">
+								<div class="col-lg-3">
+									<b>Birth Date :</b>
+								</div>
+								<div class="col-lg-9">
+									<span t-field="o.birth_date"/>
+								</div>
+							</div>
+							<div class="col-lg-6"></div>
+						</div>
+						<div class="row">
+							<div class="col-lg-6">
+								<div class="col-lg-3">
+									<b>Gender :</b>
+								</div>
+								<div class="col-lg-9">
+									<span t-field="o.gender"/>
+								</div>
+							</div>
+							<div class="col-lg-6"></div>
+						</div>
+						
+						<table class="table table-condensed" style="border:1px solid black"> 
+							<tr style="border:1px solid black">
+								<td>Class Name</td>
+								<td>Teacher Name</td>
+								<td>Division Name</td>
+								<td>Monitor Name</td>
+								<td>Class Strength</td>
+							</tr>
+							<t t-foreach="o.class_line" t-as="class_detail">
+								<tr style="border:1px solid black">
+									<td><t t-esc="class_detail.name"/></td>
+									<td><t t-esc="class_detail.teacher_name"/></td>
+									<td><t t-esc="class_detail.division_name"/></td>
+									<td><t t-esc="class_detail.monitor_name"/></td>
+									<td><t t-esc="class_detail.class_strength"/></td>
+								</tr>
+							</t>
+						</table>
+					</t>
+				</div>
+			</t>
+		</template>
+
+
+        <report 
+            id="report_student_data"
+            string="Student Data"
+            model="student.student" 
+            report_type="qweb-pdf"
+            file="school.report_studentdata" 
+            name="school.report_studentdata"
+            print_report_name="object.name"
+        />
+        
+        
+</odoo>

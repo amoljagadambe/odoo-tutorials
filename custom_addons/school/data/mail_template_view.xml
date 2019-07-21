@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+    
+
+		<!-- Email template for new users -->
+		<record id="send_student_registration_id" model="mail.template">
+		    <field name="name">Student Registration Confirmation</field>
+		    <field name="model_id" ref="school.model_student_student"/>
+		    <field name="subject">Dear ${object.name} Whiz IT invites you to connect to Join our Company</field>
+		    <field name="email_to">${object.student_email | safe}</field>
+		    <field name="body_html" type="html">
+		    	 <div class="row s_nb_column_fixed">
+	                <div class="col-lg-12 s_title pt16 pb16 bg-500" style="text-align: center;">
+	                    <h1 class="s_title_default">
+	                        <font style="font-size: 62px;">
+	                        <b>Thank you for Registering with us</b>
+	                        </font>
+	                    </h1>
+	                    <h1 class="s_title_transparent">
+	                        <font style="font-size: 18px;">
+			                  <b>Your Enrolment Number is - <i>${object.enrolment_no | safe}</i></b>
+			                </font>
+	                    </h1>
+	                </div>
+	            </div>
+		    </field>
+		</record>
+	</data>
+</odoo>
+    
+    

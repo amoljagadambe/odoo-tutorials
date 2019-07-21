@@ -38,4 +38,12 @@ class StudentInfo(models.Model):
             if age < 3:
                 raise UserError(_('Student Age should be more than 3 years.'))
             self.age = age
+            
+class Student(models.Model):
+    
+    _inherit="student.student"
+    
+    phone = fields.Char('Phone')
+    
+    
     

@@ -6,7 +6,7 @@
     'description': """
         Module for College management.
             """,
-    'depends': ['base'],
+    'depends': ['base','school'],
     'data': [
         'data/stud_data.xml',
         'views/stud_view.xml',

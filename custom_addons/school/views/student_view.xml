@@ -10,6 +10,7 @@
             	<field name="roll_no"/>
             	<field name="class_name"/>
             	<field name="div_name"/>
+            	<field name="student_email"/>
             	<field name="active_student" invisible="1"/>
             	<field name="gender"/>
             </tree>
@@ -25,6 +26,7 @@
 	            		<field name="image" widget="image" class="oe_avatar" nolabel="1"/>
 	            		<div class="oe_title">
 	            			<h1><field name="student_display_name" readonly="1"/></h1>
+	            			<h4><field name="enrolment_no" readonly="1"/></h4>
 	            		</div>
 		            	<group>
 			            	<group>
@@ -33,6 +35,7 @@
 				            	<field name="class_id" required="1"/>
 				            	<field name="birth_date" required="1"/>
 				            	<field name="age"/>
+				            	<field name="student_email" required="1"/>
 			            	</group>
 			            	<group>
 				            	<field name="div_name"/>

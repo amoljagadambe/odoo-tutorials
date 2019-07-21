@@ -14,7 +14,9 @@
         'views/class_view.xml',
         'data/student_data.xml',
         'views/res_partner_view.xml',
-        'views/template.xml'
+        'views/template.xml',
+        'data/mail_template_view.xml',
+        'report/report_student_data.xml'
     ],
     'installable':True,
 }

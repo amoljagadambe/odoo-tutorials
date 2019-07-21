@@ -43,5 +43,14 @@
             <field name="class_id" ref="class_id_1"/>
         </record>
         
+        <record id="sequence_whiz_enrolment" model="ir.sequence">
+            <field name="name">Student Enrolment</field>
+            <field name="code">WHIZ-Enrolment</field>
+            <field name="prefix">WHIZ</field>
+            <field name="suffix">[%(year)s]</field>
+            <field eval="1" name="number_next"/>
+            <field eval="1" name="number_increment"/>
+        </record>
+        
     </data>
 </odoo>

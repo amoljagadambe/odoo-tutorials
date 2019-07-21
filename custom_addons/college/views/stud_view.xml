@@ -138,5 +138,27 @@
         
         <menuitem id="menu_student_view_id" name="Student" parent="menu_college_root_id" action="action_student_view_id" sequence="2"/>
         
+        <record id="view_student_form_view_inherit_id" model="ir.ui.view">
+            <field name="name">Student Tree View</field>
+            <field name="model">student.student</field>
+            <field name="inherit_id" ref="school.view_student_form_view_id"/>
+            <field name="arch" type="xml">
+            	<xpath expr="field[@name='div_name']" position="after">
+            		<field name="phone"/>
+            	</xpath>
+            </field>
+        </record>
+        
+        <record id="view_student_tree_view_inherit_id" model="ir.ui.view">
+            <field name="name">Student Form View</field>
+            <field name="model">student.student</field>
+            <field name="inherit_id" ref="school.view_student_tree_view_id"/>
+            <field name="arch" type="xml">
+            	<xpath expr="//field[@name='class_strength']" position="after">
+            		<field name="phone"/>
+            	</xpath>
+            </field>
+        </record>
+        
     </data>
 </odoo>

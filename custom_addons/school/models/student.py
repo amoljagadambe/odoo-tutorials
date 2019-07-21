@@ -8,7 +8,7 @@ class StudentInfo(models.Model):
     _rec_name="name"
     
     name = fields.Char('Student Name', required=True)
-    roll_no = fields.Integer('Roll No', required=True)
+    roll_no = fields.Integer('Roll No')
     class_name = fields.Char('Class',help="Present class student is in",copy=False)
     div_name = fields.Char('Division Name')
     gender = fields.Selection([('male','Male'),('female','Female')], required=True,string="Gender",copy=False)
@@ -32,6 +32,8 @@ class StudentInfo(models.Model):
     student_display_name = fields.Char('Student Name')
     class_strength = fields.Integer(related="class_id.max_class_strength",string='Total Class Strength')
     class_line = fields.Many2many('class.class','student_class_rel','class_id','student_id','Class')
+    enrolment_no=fields.Char('Enrolment Number')
+    student_email = fields.Char('Email')
     
     
     
@@ -62,10 +64,10 @@ class StudentInfo(models.Model):
         res = super(StudentInfo,self).create(create_values)
         display_name = create_values.get('name') + '(Roll No - ' + str(create_values.get('roll_no')) + ' )'
         res.student_display_name = display_name
-        class_students = self.search([('class_id','=',res.class_id.id)])
-        for student in class_students:
-            if student.roll_no == res.roll_no and student.id != res.id:
-                raise UserError(_('Roll No Cannot be duplicated'))
+#         class_students = self.search([('class_id','=',res.class_id.id)])
+#         for student in class_students:
+#             if student.roll_no == res.roll_no and student.id != res.id:
+#                 raise UserError(_('Roll No Cannot be duplicated'))
         return res
     
     
@@ -78,7 +80,10 @@ class StudentInfo(models.Model):
     def default_get(self,default_values):
         context = self._context
         res = super(StudentInfo,self).default_get(default_values)
-        res['roll_no'] = 20
+        sequence_obj = self.env['ir.sequence'].search([('code','=','WHIZ-Enrolment')])
+        sequence = sequence_obj.next_by_code('WHIZ-Enrolment')   
+        print(sequence) 
+        res['enrolment_no'] = sequence
         return res
     
     @api.constrains('roll_no')
