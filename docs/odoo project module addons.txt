@@ -1,0 +1,5 @@
+https://www.odoo.com/apps/modules/11.0/project_task_deadline_search_filters/  (not Availble for 12)
+Project Task - Kanban Color - Deadline				(unable to install Module error)
+
+(Module For Developer no need to add this Point)
+https://www.odoo.com/apps/modules/12.0/excel_import_export/

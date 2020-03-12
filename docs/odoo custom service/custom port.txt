@@ -1,0 +1,13 @@
+
+#command to run the odoo on user defined port
+
+	./odoo.py --xmlrpc-port=8070
+	
+#custom addon path
+	./odoo.py --addons-path=customaddons,addons
+	
+#Add Custom Module in Database and Update it
+    Module Name = dietfats
+	Database name = whizdemo
+	
+	./odoo.py --addons-path=customaddons,addons -u dietfats -d whizdemo

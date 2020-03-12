@@ -1,0 +1,35 @@
+whiz-odoo-db.cn0lb1pxsdbt.ap-south-1.rds.amazonaws.com
+
+whiz-odoo-db
+
+postgres
+whizodoo
+
+# Accessing the database of RDS from outside
+
+psql --host=whiz-odoo-db.cn0lb1pxsdbt.ap-south-1.rds.amazonaws.com --port=5432 --username=postgres --password
+
+
+# Restore Database in AWS RDS
+
+pg_restore -h whiz-odoo-db.cn0lb1pxsdbt.ap-south-1.rds.amazonaws.com -U ubuntu -c -d whiz_services whiz_services_mainbackup11.dump --no-owner --role=postgres --no-privileges --no-owner
+
+
+pg_restore --no-privileges --no-owner -h whiz-odoo-db.cn0lb1pxsdbt.ap-south-1.rds.amazonaws.com -U ubuntu -c -d whiz_services_v1 whiz_services_mainbackup11.dump
+
+
+/usr/bin/python3.6
+
+
+# User Creation and access Grant 
+ 
+create role ubuntu with password 'whizodoo' login; 
+CREATE USER ubuntu WITH PASSWORD 'whizodoo';
+
+revoke all on database postgres from public;
+grant connect, temporary on database postgres to ubuntu;
+
+
+
+# Command to activate the Virtual Env of Python
+source venv/bin/activate

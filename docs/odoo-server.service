@@ -1,0 +1,16 @@
+[Unit]
+Description=Odoo Open Source ERP and CRM
+Requires=postgresql.service
+After=network.target postgresql.service
+
+[Service]
+Type=simple
+PermissionsStartOnly=true
+SyslogIdentifier=odoo-server
+User=root
+ExecStart=/home/odoo/odoo-bin --config=/home/odoo/odoo.conf
+WorkingDirectory=/home/odoo/
+StandardOutput=journal+console
+
+[Install]
+WantedBy=multi-user.target

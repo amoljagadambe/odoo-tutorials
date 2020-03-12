@@ -1,0 +1,8 @@
+https://www.odoo.com/apps/modules/12.0/oh_hr_zk_attendance/   	(Biometric Authentication)
+	
+device Support
+	ZKteco model 'uFace 202'
+	ZKteco model 'iFace990'
+
+
+https://apps.odoo.com/apps/modules/11.0/hr_attendance_autoclose/

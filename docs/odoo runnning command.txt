@@ -1,0 +1,1 @@
+./odoo-bin --config=odoo.conf -d odoo_12 -u school

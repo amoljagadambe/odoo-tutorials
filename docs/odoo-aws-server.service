@@ -1,0 +1,13 @@
+[Unit]
+Description=Odoo-OpenERP
+
+[Service]
+Type=simple
+SyslogIdentifier=Odoo-OpenERP
+PermissionsStartOnly=true
+User=whizit
+ExecStart=/home/openerp/venv/bin/python3 /home/openerp/odoo/odoo-bin -c /home/openerp/odoo/odoo.conf
+StandardOutput=journal+console
+
+[Install]
+WantedBy=multi-user.target

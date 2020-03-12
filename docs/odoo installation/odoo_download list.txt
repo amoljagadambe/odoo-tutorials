@@ -1,0 +1,44 @@
+
+Installed App
+
+https://www.odoo.com/apps/modules/12.0/project_team/
+https://www.odoo.com/apps/modules/12.0/project_task_dependency/
+https://www.odoo.com/apps/modules/12.0/project_detail_report/ 
+https://www.odoo.com/apps/modules/12.0/project_description/
+https://www.odoo.com/apps/modules/12.0/project_stage_closed/
+https://www.odoo.com/apps/modules/12.0/project_milestone/
+https://www.odoo.com/apps/modules/12.0/project_stage_state/
+https://www.odoo.com/apps/modules/12.0/project_task_code/
+https://www.odoo.com/apps/modules/12.0/project_parent_task_filter/
+https://www.odoo.com/apps/modules/12.0/project_role/
+https://www.odoo.com/apps/modules/12.0/automatic_task_duration/
+https://www.odoo.com/apps/modules/8.0/project_kanban_red/         				This Module Gives the Error on basis of Name
+																				project_kanban
+
+
+
+Not Installed Applications															REMARK
+
+
+https://www.odoo.com/apps/modules/8.0/project_task_phase/               		(available for 8)
+https://www.odoo.com/apps/modules/12.0/bi_crm_task/                     		(404 not Found)
+https://www.odoo.com/apps/modules/12.0/bi_create_issue_from_task/     			(404 not Found)
+https://www.odoo.com/apps/modules/11.0/project_task_checklist/     				(avialable for 11)
+https://www.odoo.com/apps/modules/11.0/project_task_collaborators/ 				(available for 11)
+https://www.odoo.com/apps/modules/11.0/project_task_deadline_search_filters/ 	(available for 11)
+https://www.odoo.com/apps/modules/8.0/project_task_issues/  					(available for 8)
+https://www.odoo.com/apps/modules/12.0/bi_task_merge/ 							(404 not Found)
+https://www.odoo.com/apps/modules/7.0/project_action_item/  					(available for 7)
+https://www.odoo.com/apps/modules/8.0/project_task_delegate/ 					(available for 7 and 8)
+https://www.odoo.com/apps/modules/8.0/project_task_activity/   					(available for 8)
+https://www.odoo.com/apps/modules/10.0/project_subtask_form_page/  				(available for 10)
+https://www.odoo.com/apps/modules/10.0/project_report_pdf/         				(available for 8,9 and 10)
+https://www.odoo.com/apps/modules/10.0/tko_project_task_actions_assign_team/  	(available for 10)
+https://www.odoo.com/apps/modules/10.0/dvit_project_task_kanban/   				(available for 10)
+https://www.odoo.com/apps/modules/9.0/project_task_send_by_mail/     			(available for 9)
+https://www.odoo.com/apps/modules/11.0/project_task_documents/       			(available for 11)
+https://www.odoo.com/apps/modules/11.0/project_ux/                    			(available for 11)
+https://www.odoo.com/apps/modules/10.0/project_project_category/       			(available for 8 and 10)
+https://www.odoo.com/apps/modules/8.0/tasks_modification_wizard/       			(available for 8)
+https://www.odoo.com/apps/modules/8.0/project_block_task/              			(available for 8)
+https://www.odoo.com/apps/modules/11.0/scrummer/                       			(available for 11)

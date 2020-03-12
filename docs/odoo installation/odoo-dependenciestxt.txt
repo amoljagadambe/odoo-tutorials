@@ -1,0 +1,20 @@
+# This file contains the required dependencies for Odoo
+# that you can cut and paste into your Ubuntu  terminal
+
+
+sudo apt-get install python-cups python-dateutil python-decorator python-docutils python-feedparser 
+     python-gdata python-geoip python-gevent  python-jinja2 python-ldap python-libxslt1 python-lxml python-mako python-mock python-openid python-passlib 
+     python-psutil python-psycopg2 python-babel python-pychart python-pydot python-pyparsing python-pypdf python-reportlab python-requests python-simplejson python-tz python-unicodecsv 
+     python-unittest2 python-vatnumber python-vobject python-werkzeug python-xlwt python-yaml wkhtmltopdf python-pip python-dev libevent-dev gcc libxml2-dev libxslt-dev node-less geoip-database-contrib
+	 
+	 -unable to install this package
+		python-imaging
+	 best work way around is sudo apt-get install python-pil
+	 
+	 
+	 
+	 
+	
+	
+# to download Odoo
+	 git clone https://www.github.com/odoo/odoo --depth 1 --branch 9.0 --single-branch .

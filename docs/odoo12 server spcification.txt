@@ -1,0 +1,14 @@
+
+
+Requirements for running Odoo 9 Community and Enterprise are the same.
+Requirements for running Odoo 9 Community and Enterprise are the same.
+For a 5 user site = 2 CPU server and 2 GB Ram
+For 20 user site = 4 CPU server and 8 GB Ram
+For 100+ user site = recommend splitting app and database servers, 2 x 8 CPU servers with 32 GB Ram
+
+
+Processor = Intel (64 bit) 
+Number of Processors = 1
+Processor Core available  = 6
+Memory = 8 Gigabyte
+OS  = Ubuntu 14.04 LTS

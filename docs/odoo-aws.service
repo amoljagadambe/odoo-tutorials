@@ -1,0 +1,13 @@
+[Unit]
+Description=Odoo-OpenERP
+
+[Service]
+Type=simple
+SyslogIdentifier=Odoo-OpenERP
+PermissionsStartOnly=true
+User=ubuntu
+ExecStart=/usr/bin/python3.6 /home/ubuntu/odoo/odoo/odoo-bin -c /home/ubuntu/odoo/odoo/odoo.conf
+StandardOutput=journal+console
+
+[Install]
+WantedBy=multi-user.target
